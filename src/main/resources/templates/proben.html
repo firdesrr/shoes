@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>Add shoes</title>
+</head>
+<body>
+<form action="#" th:action="@{/submit}" th:object="${shoes}" method="post">
+    
+                    <h3 >ADD SHOES</h3>
+                
+                
+                    <label>Model: </label>
+                    
+                        <input type="text" th:field="*{model}" required>
+                    
+                    <span th:if = "${#fields.hasErrors('model')}" th:errors = "*{model}" ></span>
+                   <br>
+                    <label>Size: </label>
+                   
+                        <input type="number" th:field="*{size}" class="form-control" required>
+                   
+                    <span th:if = "${#fields.hasErrors('size')}" th:errors = "*{size}" style = "color:red"></span>
+                    <label>Color: </label>
+                    <div class="input-group mb-3">
+                        <input type="text" step="any" th:field="*{color}" class="form-control" required>
+                    </div>
+                    <span th:if = "${#fields.hasErrors('color')}" th:errors = "*{color}" style = "color:red"></span>
+                    <label>Price: </label>
+                    <div class="input-group mb-3">
+                        <input type="number" th:field="*{price}" class="form-control" required>
+                    </div>
+                    <span th:if = "${#fields.hasErrors('price')}" th:errors = "*{price}" style = "color:red"></span>
+                    <label>Available count: </label>
+                    <div class="input-group mb-3">
+                        <input type="number" th:field="*{availableCount}" class="form-control" required>
+                    </div>
+                    <span th:if = "${#fields.hasErrors('availableCount')}" th:errors = "*{availableCount}" style = "color:red"></span>
+                    <div class="d-grid col-12 mx-auto">
+                        <br>
+                        <button type="submit" class="btn btn-success">Submit</button><br>
+                        <button type="reset" class="btn btn-primary">Reset</button>
+                    </div>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+</body>
+</html>
